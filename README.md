@@ -21,10 +21,10 @@
 ### 設計書
 >>>UI Flow:https://drive.google.com/file/d/1cWueAtD-McwRkf5AcRoJ1etLXxS-yoXl/view?usp=sharing  
 >>>ワイヤーフレーム:ec https://drive.google.com/file/d/1qiMobI2SUCkrj4BAdejOyulys00Tc9MV/view?usp=sharing  
->>>ワイヤーフレーム:admin https://drive.google.com/file/d/1OBoKXd3AtpiMGTx1k2lV8kWH_9dnQB8g/view?usp=sharing
->>>ER図:https://drive.google.com/file/d/1qWbtO1NT3LbCui7404FHxxxJi5E4w1Wb/view?usp=sharing
->>>テーブル定義書:https://drive.google.com/file/d/1Yk9KGq2WohDNAEHU6AouUsF4oPH4EfYS/view?usp=sharing
->>>アプリケーション詳細設計書:https://drive.google.com/file/d/1BYS87ZZEa4ML1cuROErFGsjSXXppgC7C/view?usp=sharing
+>>>ワイヤーフレーム:admin https://drive.google.com/file/d/1OBoKXd3AtpiMGTx1k2lV8kWH_9dnQB8g/view?usp=sharing  
+>>>ER図:https://drive.google.com/file/d/1qWbtO1NT3LbCui7404FHxxxJi5E4w1Wb/view?usp=sharing  
+>>>テーブル定義書:https://drive.google.com/file/d/1Yk9KGq2WohDNAEHU6AouUsF4oPH4EfYS/view?usp=sharing  
+>>>アプリケーション詳細設計書:https://drive.google.com/file/d/1BYS87ZZEa4ML1cuROErFGsjSXXppgC7C/view?usp=sharing  
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/13tQ4ktKJz9Vh5RHxkYSbECCIfhhrX0z_9mhLDVDT13U/edit?usp=sharing
 
