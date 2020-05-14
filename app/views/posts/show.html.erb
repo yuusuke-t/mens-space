@@ -1,0 +1,11 @@
+<h4>詳細</h4>
+
+<p>image</p>
+<%= attachment_image_tag @post, :image, :fill, 100, 100, fallback: "no-image-mini.jpeg" %>
+<p>title</p>
+<%= @post.title %>
+<p>text</p>
+<%= @post.text %>
+
+<%= link_to "編集", edit_post_path(@post.id) %>
+<%= link_to "削除", post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
