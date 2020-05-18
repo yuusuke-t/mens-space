@@ -1,0 +1,7 @@
+<h4>プロフィール編集</h4>
+
+<%= form_for(@user) do |f| %>
+	<span>name<%= f.text_field :name %></span>
+	<span>image<%= f.attachment_field :profile_image %></span>
+	<%= f.submit 'Update User' %>
+<% end %>

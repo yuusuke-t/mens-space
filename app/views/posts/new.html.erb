@@ -8,5 +8,8 @@
 	<h4>text</h4>
 	<%= f.text_area :text %>
 
+	<%= f.label :genre %>
+	<%= f.select :genre_id, ['小説', 'プログラミング', 'ビジネス'], {include_blank: '---'} %>
+
 	<%= f.submit %>
 <% end %>

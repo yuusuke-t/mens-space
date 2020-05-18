@@ -1,0 +1,9 @@
+<h4>プロフィール</h4>
+	<% @user.posts.each do |post| %>
+	<%= attachment_image_tag post, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+	<% end %>
+	<%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
+	<%= @user.name %>
+	<% if @user.id == current_user.id %>
+		<%= link_to "編集", edit_user_path(@user),class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_14347" %>
+	<% end %>
