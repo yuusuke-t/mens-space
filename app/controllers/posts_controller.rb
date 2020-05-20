@@ -6,7 +6,8 @@ class PostsController < ApplicationController
 
 	def create
 		post = Post.new(post_params)
-		post.save
+		post.user_id = current_user.id
+		post.save!
 		redirect_to posts_path
 	end
 
@@ -37,7 +38,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :text, :image, :genre)
+		params.require(:post).permit(:title, :text, :image, :genre_id)
 	end
 
 end

@@ -1,15 +1,32 @@
-<h4>一覧</h4>
-<!-- 投稿一覧 -->
-<% @posts.each do |post| %>
-	<p>image</p>
-	<%= link_to post_path(post.id) do %>
-		<%= attachment_image_tag post, :image, :fill, 100, 100, format: 'jpeg', fallback: "no-image-mini.jpeg" %>
-	<% end %>
-	<p>title</p>
-	<%= post.title %>
-	<p>text</p>
-	<%= post.text %>
-	<p>genre</p>
-	<%= post.genre_id %>
-
-<% end %>
+<div class="index-container">
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<p>一覧</p>
+	</div>
+	<div class="col-xs-1"></div>
+	<div class="col-xs-9">
+		<% @posts.each do |post| %>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Image</th>
+					<th>Title</th>
+					<th>Text</th>
+					<th>Genre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><%= link_to post_path(post.id) do %>
+						<%= attachment_image_tag post, :image, :fill, 100, 100, format: 'jpeg', fallback: "no-image-mini.jpeg" %>
+						<% end %>
+					</th>
+					<th><%= post.title %></th>
+					<th><%= post.text %></th>
+					<th><%= post.genre_id %></th>
+				</tr>
+			</tbody>
+		</table>
+		<% end %>
+	</div>
+</div>

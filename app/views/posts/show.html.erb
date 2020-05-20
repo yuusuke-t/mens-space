@@ -1,11 +1,30 @@
-<h4>詳細</h4>
 
-<p>image</p>
-<%= attachment_image_tag @post, :image, :fill, 100, 100, fallback: "no-image-mini.jpeg" %>
-<p>title</p>
-<%= @post.title %>
-<p>text</p>
-<%= @post.text %>
-
-<%= link_to "編集", edit_post_path(@post.id) %>
-<%= link_to "削除", post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<div class="index-container">
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<p>詳細</p>
+	</div>
+	<div class="col-xs-1"></div>
+	<div class="col-xs-9">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Image</th>
+					<th>Title</th>
+					<th>Text</th>
+					<th>Genre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><%= attachment_image_tag @post, :image, :fill, 100, 100, fallback: "no-image-mini.jpeg" %></th>
+					<th><%= @post.title %></th>
+					<th><%= @post.text %></th>
+					<th></th>
+				</tr>
+			</tbody>
+		</table>
+		<%= link_to "編集", edit_post_path(@post.id) %>
+		<%= link_to "削除", post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+	</div>
+</div>
