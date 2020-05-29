@@ -4,3 +4,21 @@
 .index-container {
 	margin-top: 100px;
 }
+
+
+.post-items {
+	float: left;
+  // margin: 5px;
+  padding: 10px;
+}
+
+.clearfix::after{
+	content:"";
+	display: block;
+	clear: both;
+}
+
+.pagi {
+	width: 100%;
+	text-align:center;
+}

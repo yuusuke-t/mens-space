@@ -1,0 +1,35 @@
+<div class="user-container">
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+    <h3>会員編集画面</h3>
+    <%= form_with model: @user,url:admin_user_path(@user.id),local: true do |f| %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>会員ID</th>
+          <th><%= @user.id %></th>
+        </tr>
+        <tr>
+          <th>プロフィール画像</th>
+          <th><%= f.attachment_field :profile_image %></th>
+        </tr>
+        <tr>
+          <th>氏名</th>
+          <th><%= f.text_field :name, autofocus: true %></th>
+        </tr>
+        <tr>
+          <th><%= f.radio_button :is_active, :enable %>有効<%= f.radio_button :is_active, :disable %>退会済み</th>
+        </tr>
+      </thead>
+    </table>
+    <%= f.submit "変更を保存する", class:"btn-sm btn-success" %>
+    <% end %>
+    </div>
+  </div>
+</div>

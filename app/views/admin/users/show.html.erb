@@ -1,0 +1,32 @@
+<div class="user-container">
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-3">
+		<h4>会員詳細画面</h4>
+		<table class="table">
+			<thead>
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th>顧客ID</th>
+					<th><%= @user.id %><span id="effectiveness"><%= @user.is_active_i18n %></span></th>
+				</tr>
+				<tr>
+					<th>氏名</th>
+					<th><%= @user.name %></th>
+				</tr>
+				<tr>
+					<th>画像</th>
+					<th><%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></th>
+				</tr>
+				<tr>
+					<th><%= link_to "編集", edit_admin_user_path(@user.id),class:"btn-sm btn-success" %></th>
+					<th></th>
+				</tr>
+			</thead>
+		</table>
+		</div>
+	</div>
+</div>

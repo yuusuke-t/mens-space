@@ -17,7 +17,19 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.welcome-text {
+  margin: 60px 0 0 20px;
+  font-weight: bold;
+}
+
  .continer {
  	width: 100%;
  }
 
+.sign_in-container {
+	margin-top: 100px;
+}
+
+.sign_up-container {
+	margin-top: 100px;
+}

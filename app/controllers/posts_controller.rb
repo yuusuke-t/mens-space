@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
+	before_action :correct_user, only: [:edit, :update]
 
 	def new
 		@post = Post.new
+		@genres = Genre.all
 	end
 
 	def create
@@ -12,7 +14,15 @@ class PostsController < ApplicationController
 	end
 
 	def index
-		@posts = Post.all
+
+		@genres  = Genre.all
+      p params[:i].class
+      if params[:i]
+        posts = Post.where(genre_id: params[:i])
+        @posts = posts.page(params[:page]).per(10)
+      else
+        @posts = Post.page(params[:page]).per(10)
+      end
 	end
 
 	def show
@@ -21,6 +31,7 @@ class PostsController < ApplicationController
 
 	def edit
 		@post = Post.find(params[:id])
+		@genres = Genre.all
 	end
 
 	def update
@@ -36,9 +47,16 @@ class PostsController < ApplicationController
 	end
 
 	private
+	def correct_user
+    post = Post.find(params[:id])
+    user = post.user_id
+    unless user == current_user.id
+      redirect_to posts_path
+    end
+   end
 
 	def post_params
-		params.require(:post).permit(:title, :text, :image, :genre_id)
+		params.require(:post).permit(:title, :text, :image, :genre_id, :user_id)
 	end
 
 end

@@ -1,9 +1,35 @@
-<h4>プロフィール</h4>
-	<% @user.posts.each do |post| %>
-	<%= attachment_image_tag post, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-	<% end %>
-	<%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
-	<%= @user.name %>
-	<% if @user.id == current_user.id %>
-		<%= link_to "編集", edit_user_path(@user),class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_14347" %>
-	<% end %>
+<div class="index-container">
+	<div class="row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Image</th>
+						<th>Title</th>
+						<th>Text</th>
+						<th>Genre</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @posts.each do |post| %>
+					<tr>
+						<th>
+							<%= link_to post_path(post.id) do %>
+								<%= attachment_image_tag post, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+							<% end %>
+								<%= post.user.name %>
+						</th>
+						<th><%= post.title %></th>
+						<th><%= post.text %></th>
+						<th><%= post.genre.name %></th>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-xs-2">
+    		<%= render 'users/profile', user: @user %>
+		</div>
+	</div>
+</div>

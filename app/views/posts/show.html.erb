@@ -1,30 +1,41 @@
-
 <div class="index-container">
 	<div class="row">
-		<div class="col-xs-1"></div>
-		<p>詳細</p>
-	</div>
-	<div class="col-xs-1"></div>
-	<div class="col-xs-9">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Image</th>
-					<th>Title</th>
-					<th>Text</th>
-					<th>Genre</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th><%= attachment_image_tag @post, :image, :fill, 100, 100, fallback: "no-image-mini.jpeg" %></th>
-					<th><%= @post.title %></th>
-					<th><%= @post.text %></th>
-					<th></th>
-				</tr>
-			</tbody>
-		</table>
-		<%= link_to "編集", edit_post_path(@post.id) %>
-		<%= link_to "削除", post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Image</th>
+						<th>Title</th>
+						<th>Text</th>
+						<th>Genre</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>
+							<%= link_to (@post.user) do %>
+							<%= attachment_image_tag @post, :image, :fill, 100, 100, fallback: "no-image-mini.jpeg" %><br/>
+							<%= @post.user.name %>
+							<% end %>
+						</th>
+						<th><%= @post.title %></th>
+						<th><%= @post.text %></th>
+						<th><%= @post.genre.name %></th>
+					</tr>
+				</tbody>
+			</table>
+			<%= link_to "編集", edit_post_path(@post.id), class: "btn btn-primary"  %>
+			<%= link_to "削除", post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger"  %>
+		</div>
+		<div class="col-xs-2">
+			<%= render 'users/profile', user: current_user %>
+			<div class="genre">
+				<%= form_with url: posts_path, method: :get, local: true do |f| %>
+				<%= f.collection_select :i, Genre.all, :id, :name, :include_blank => "-------" %>
+	        	<%= f.submit "ジャンル検索" %>
+	        	<% end %>
+			</div>
+		</div>
 	</div>
 </div>

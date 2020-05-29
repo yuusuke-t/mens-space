@@ -25,6 +25,9 @@
                   <%= link_to ' Posts', posts_path,class:"glyphicon glyphicon-book books" %>
                 </li>
                 <li>
+                  <%= link_to ' New_Post', new_post_path,class:"glyphicon glyphicon-book books" %>
+                </li>
+                <li>
                   <%= link_to " logout", destroy_user_session_path,class:"glyphicon glyphicon-log-out logout",method: :delete %>
                 </li>
               <% else %>
@@ -42,6 +45,11 @@
         </nav>
       </div>
     </header>
+    <div class="welcome-text">
+      <% if user_signed_in? %>
+      <p>ようこそ <%= current_user.name %> さん !</p>
+      <% end %>
+    </div>
       <%= yield %>
   </body>
 </html>

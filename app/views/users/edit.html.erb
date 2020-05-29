@@ -1,7 +1,14 @@
-<h4>プロフィール編集</h4>
-
-<%= form_for(@user) do |f| %>
-	<span>name<%= f.text_field :name %></span>
-	<span>image<%= f.attachment_field :profile_image %></span>
-	<%= f.submit 'Update User' %>
-<% end %>
+<div class="user-container">
+	<div class="row">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-4">
+		<%= form_for(@user) do |f| %>
+			<h4>Name</h4>
+			<%= f.text_field :name, class: "form-control" %>
+			<h4>Image</h4>
+			<%= f.attachment_field :profile_image %>
+			<%= f.submit "変更を保存", class: "btn btn-info btn-lg btn-block admin-products-create" %>
+		<% end %>
+		</div>
+	</div>
+</div>

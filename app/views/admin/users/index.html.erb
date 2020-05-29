@@ -1,0 +1,28 @@
+<div class="user-container">
+  <div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-7">
+			<table class="table">
+				<thead>
+					<tr class="active">
+						<th>会員ID</th>
+						<th>プロフィール画像</th>
+						<th>名前</th>
+						<th>ステータス</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @users.each do |user| %>
+					<tr>
+						<td><%= user.id %></td>
+						<td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %></td>
+						<td><%= link_to user.name, admin_user_path(user.id) %></td>
+						<td><%= user.is_active_i18n %></td>
+											</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<%= paginate @users, class: "paginate" %>
+</div>

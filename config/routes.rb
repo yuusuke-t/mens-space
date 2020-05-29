@@ -11,13 +11,15 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: [:show, :edit, :update]
-  resources :posts
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :comments, only: [:new, :create, :edit, :update, :destroy]
-  resources :favorites, only: [:create, :destroy]
+  resources :genres, only: [:new, :create, :index, :edit, :update, :destroy]
 
 
   namespace :admin do
-  	resources :users, only: [:index, :edit, :update]
+  	resources :users, only: [:index, :show, :edit, :update]
   	resources :posts, only: [:index, :edit, :update]
   end
 
