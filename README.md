@@ -19,9 +19,8 @@
 >>>これから男のスペースの構成を考える時
 
 ### 設計書
->>>UI Flow:https://drive.google.com/file/d/1cWueAtD-McwRkf5AcRoJ1etLXxS-yoXl/view?usp=sharing  
->>>ワイヤーフレーム:ec https://drive.google.com/file/d/1qiMobI2SUCkrj4BAdejOyulys00Tc9MV/view?usp=sharing  
->>>ワイヤーフレーム:admin https://drive.google.com/file/d/1OBoKXd3AtpiMGTx1k2lV8kWH_9dnQB8g/view?usp=sharing  
+>>>UI Flow:https://drive.google.com/file/d/1j7-rc8wcx_GIu-qZG6VrGZ3q1bWr4EHp/view?usp=sharing  
+>>>ワイヤーフレーム:ec https://drive.google.com/file/d/1UcCqIUkMohsW111qseX_IPgRLfxTzLJV/view?usp=sharing  
 >>>ER図:https://drive.google.com/file/d/1qWbtO1NT3LbCui7404FHxxxJi5E4w1Wb/view?usp=sharing  
 >>>テーブル定義書:https://drive.google.com/file/d/1Yk9KGq2WohDNAEHU6AouUsF4oPH4EfYS/view?usp=sharing  
 >>>アプリケーション詳細設計書:https://drive.google.com/file/d/1BYS87ZZEa4ML1cuROErFGsjSXXppgC7C/view?usp=sharing  
