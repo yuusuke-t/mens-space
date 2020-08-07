@@ -7,10 +7,13 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		post = Post.new(post_params)
-		post.user_id = current_user.id
-		post.save!
-		redirect_to posts_path
+		@post = Post.new(post_params)
+		@post.user_id = current_user.id
+		if @post.save
+			redirect_to posts_path
+		else 
+			render :new
+		end
 	end
 
 	def index
@@ -27,6 +30,7 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@comment = Comment.new
 	end
 
 	def edit
@@ -53,7 +57,7 @@ class PostsController < ApplicationController
     unless user == current_user.id
       redirect_to posts_path
     end
-   end
+    end
 
 	def post_params
 		params.require(:post).permit(:title, :text, :image, :genre_id, :user_id)
