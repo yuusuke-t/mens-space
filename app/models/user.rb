@@ -12,4 +12,6 @@ class User < ApplicationRecord
   attachment :profile_image, destroy: false
 
   enum is_active: { enable: true, disable: false }
+
+  validates :name, presence: true, length: {maximum: 20, minimamu: 2}
 end
