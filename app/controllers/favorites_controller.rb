@@ -14,5 +14,4 @@ class FavoritesController < ApplicationController
     	redirect_to posts_path
     end
 
-
 end
