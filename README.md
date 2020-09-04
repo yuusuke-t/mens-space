@@ -27,7 +27,7 @@ ER図:https://drive.google.com/file/d/1qWbtO1NT3LbCui7404FHxxxJi5E4w1Wb/view?usp
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/13tQ4ktKJz9Vh5RHxkYSbECCIfhhrX0z_9mhLDVDT13U/edit?usp=sharing
 
-### 機能一覧  
+### 開発環境   
 os:macOS catalina  
 言語:HTML,CSS,JavaScript,Ruby,SQL  
 フレームワーク:Ruby on Rails,Bootstrap
